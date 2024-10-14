@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>농산물 목록</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>판매 중인 농산물 목록</h1>
+    <div id="postsList"></div>
+
+    <script>
+        // 저장된 게시글을 불러와서 화면에 표시
+        function displayPosts() {
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+            const postsList = document.getElementById('postsList');
+            postsList.innerHTML = ''; // 게시글 목록 초기화
+
+            posts.forEach((post, index) => {
+                const postDiv = document.createElement('div');
+                postDiv.className = 'post';
+
+                postDiv.innerHTML = `
+                    <h2>${post.name}</h2>
+                    <p>가격: ${post.price}원</p>
+                    <p>설명: ${post.description}</p>
+                    <p>판매자: ${post.seller}</p>
+                    <img src="${post.image}" alt="${post.name}" width="200"><br>
+                    <button onclick="purchaseProduct(${index})">구매하기</button>
+                `;
+
+                postsList.appendChild(postDiv);
+            });
+        }
+
+        // 상품 구매 버튼 클릭 시 구매 페이지로 이동
+        function purchaseProduct(index) {
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+            const product = posts[index];
+
+            // 선택한 상품 정보를 localStorage에 저장 (구매 페이지에서 사용)
+            localStorage.setItem('selectedProduct', JSON.stringify(product));
+
+            // 구매 페이지로 이동
+            window.location.href = 'purchase.html';
+        }
+
+        // 페이지가 로드될 때 게시글 목록 표시
+        window.onload = function() {
+            displayPosts();
+        };
+    </script>
+</body>
+</html>
