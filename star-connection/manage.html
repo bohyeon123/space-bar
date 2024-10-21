@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시물 관리 페이지</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>내 게시물 관리</h1>
+    <div id="myPostsList"></div>
+
+    <script>
+        const loggedInUser = localStorage.getItem('loggedInUser');
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const currentUser = users.find(user => user.username === loggedInUser);
+        const sellerName = currentUser ? currentUser.name : '알 수 없음';
+
+        // 저장된 게시글 중 현재 로그인된 판매자의 게시글만 표시
+        function displayMyPosts() {
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+            const myPostsList = document.getElementById('myPostsList');
+            myPostsList.innerHTML = ''; // 게시글 목록 초기화
+
+            posts.forEach((post, index) => {
+                if (post.seller === sellerName) {
+                    const postDiv = document.createElement('div');
+                    postDiv.className = 'post';
+
+                    postDiv.innerHTML = `
+                        <h2>${post.name}</h2>
+                        <p>가격: ${post.price}원</p>
+                        <p>설명: ${post.description}</p>
+                        <img src="${post.image}" alt="${post.name}" width="200"><br>
+                        <button onclick="editPost(${index})">수정</button>
+                        <button onclick="deletePost(${index})">삭제</button>
+                    `;
+
+                    myPostsList.appendChild(postDiv);
+                }
+            });
+        }
+
+        // 게시글 수정 페이지로 이동
+        function editPost(index) {
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+            const post = posts[index];
+
+            // 수정할 게시글 정보를 localStorage에 저장하고 수정 페이지로 이동
+            localStorage.setItem('editPostIndex', index);  // 수정할 게시글의 인덱스 저장
+            localStorage.setItem('editPostData', JSON.stringify(post)); // 수정할 게시글 데이터 저장
+            window.location.href = 'edit-post.html'; // 수정 페이지로 이동
+        }
+
+        // 게시글 삭제 기능
+        function deletePost(index) {
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+
+            const confirmDelete = confirm('정말로 이 게시글을 삭제하시겠습니까?');
+            if (confirmDelete) {
+                posts.splice(index, 1); // 해당 게시글 삭제
+                localStorage.setItem('posts', JSON.stringify(posts));
+                alert('게시글이 삭제되었습니다.');
+                displayMyPosts(); // 삭제 후 게시글 목록 다시 표시
+            }
+        }
+
+        // 페이지 로드 시 현재 로그인된 판매자의 게시글 목록 표시
+        window.onload = function() {
+            displayMyPosts();
+        };
+    </script>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="welcome.HTML">홈</a></li>
+                <li><a href="a.HTML">상품 목록</a></li>
+                <li><a href="b.html">판매/관리</a></li>
+                <li><button id="backButton">뒤로가기</button></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="navbar.js"></script>
+
+</body>
+</html>

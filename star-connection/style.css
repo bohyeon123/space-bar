@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'GmarketSansMedium';
+    text-align: center;
+
+
+}
+p {
+    font-family: 'GmarketSansMedium';
+    text-align: center;
+}
+
+.user-selection{
+	text-align: center;
+}
+
+.button1 {
+    font-family: 'GmarketSansMedium';
+    background-color:#ffaa00;
+    color: #ffffff;
+    text-decoration-line : none;
+    display :inline-block;
+    border:none;
+    border-radius:10px;
+    padding:15px;
+    min-height:20px; 
+    min-width: 110px;
+}
+
+.button2 {
+    font-family: 'GmarketSansMedium';
+    background-color:#3a3afd;
+    color: #ffffff;
+    text-decoration-line : none;
+    display :inline-block;
+    border:none;
+    border-radius:10px;
+    padding:15px;
+    min-height:20px; 
+    min-width: 110px;
+}
+
+.button1:hover {
+    background-color:#cb8801;
+    color: #e3e3e3;
+    transition: 0.7s;
+}
+
+.button2:hover {
+    background-color:#22228c;
+    color: #e3e3e3;
+    transition: 0.7s;
+}
+
+.text {
+    font-family: 'GmarketSansMedium';
+    background-color:#ffffff;
+    color: #000000;
+    text-decoration-line : none;
+    display :inline-block;
+    border:none;
+    border-radius:10px;
+    padding:15px;
+    min-height:20px; 
+    min-width: 0px;
+    
+}
+.write {
+    font-family: 'GmarketSansMedium';
+    background-color:#ffffff;
+    color: #000000;
+    text-decoration-line : #000000;
+    display :inline-block;
+    border: #000000;
+    border-radius:10px;
+    padding:5px;
+    min-height:20px; 
+    min-width: 10px;
+    box-shadow: 0px 0px 3px 0px gray;
+}
+/* 푸터를 하단에 고정하는 스타일 */
+/* 푸터를 하단에 고정하는 스타일 */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 1px 0;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+#backButton {
+    background-color: #ffffff; /* 녹색 */
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#backButton:hover {
+    background-color: #b8b8b8; /* 버튼에 마우스를 올리면 색상 변경 */
+}

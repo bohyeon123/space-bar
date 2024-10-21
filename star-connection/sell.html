@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>판매자용 페이지</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>판매자용 페이지</h1>
+
+    <section>
+        <p>농산물 판매 게시글 작성</p>
+        <form id="sellerForm">
+            <label for="productName" class="text">농산물 이름:</label>
+            <input type="text" id="productName" name="productName" class="write" required><br>
+
+            <label for="productPrice" class="text">가격:</label>
+            <input type="number" id="productPrice" name="productPrice" class="write" required><br>
+
+            <label for="productImage" class="text">사진:</label>
+            <input type="file" id="productImage" name="productImage" accept="image/*" required><br>
+
+            <label for="productDescription" class="text">설명:</label><br>
+            <textarea id="productDescription" name="productDescription" class="write" required></textarea><br>
+
+            <button type="submit">게시글 올리기</button>
+        </form>
+    </section>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="welcome.HTML">홈</a></li>
+                <li><a href="a.HTML">상품 목록</a></li>
+                <li><a href="b.html">판매/관리</a></li>
+                <li><button id="backButton">뒤로가기</button></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+    <script src="navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구매 페이지</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>상품 구매</h1>
+    <div id="purchaseInfo"></div>
+    <button id="payButton">결제하기</button>
+
+    <script>
+        // 구매할 상품 정보를 로드하여 화면에 표시
+        function displayPurchaseInfo() {
+            const product = JSON.parse(localStorage.getItem('selectedProduct'));
+
+            if (!product) {
+                alert('선택한 상품이 없습니다.');
+                window.location.href = 'a.html'; // 상품이 없으면 목록으로 돌아감
+                return;
+            }
+
+            const purchaseInfo = document.getElementById('purchaseInfo');
+            purchaseInfo.innerHTML = `
+                <h2>${product.name}</h2>
+                <p>가격: ${product.price}원</p>
+                <p>설명: ${product.description}</p>
+                <p>판매자: ${product.seller}</p>
+                <img src="${product.image}" alt="${product.name}" width="200"><br>
+            `;
+        }
+
+        // 결제 버튼 클릭 시 처리
+        document.getElementById('payButton').addEventListener('click', function() {
+            alert('결제가 완료되었습니다!');
+            localStorage.removeItem('selectedProduct'); // 결제 후 선택한 상품 정보 제거
+            window.location.href = 'a.html'; // 결제 후 다시 상품 목록으로 이동
+        });
+
+        // 페이지 로드 시 구매 정보 표시
+        window.onload = function() {
+            displayPurchaseInfo();
+        };
+    </script>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="welcome.HTML">홈</a></li>
+                <li><a href="a.HTML">상품 목록</a></li>
+                <li><a href="b.html">판매/관리</a></li>
+                <li><button id="backButton">뒤로가기</button></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="navbar.js"></script>
+
+</body>
+</html>
