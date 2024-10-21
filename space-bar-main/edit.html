@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 수정</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>게시글 수정</h1>
+    <form id="editPostForm">
+        <label for="productName" class="text">농산물 이름:</label>
+        <input type="text" id="productName" name="productName" class="write" required><br>
+
+        <label for="productPrice" class="text">가격:</label>
+        <input type="number" id="productPrice" name="productPrice" class="write" required><br>
+
+        <label for="productDescription" class="text">설명:</label><br>
+        <textarea id="productDescription" name="productDescription" class="write" required></textarea><br>
+
+        <button type="submit">수정 완료</button>
+    </form>
+
+    <script>
+        // 수정할 게시글 정보 로드
+        const postIndex = localStorage.getItem('editPostIndex');
+        const postData = JSON.parse(localStorage.getItem('editPostData'));
+
+        if (!postData) {
+            alert('수정할 게시글 정보가 없습니다.');
+            window.location.href = 'bb.html'; // 게시글 관리 페이지로 이동
+        }
+
+        // 수정할 게시글 정보로 입력 폼 채우기
+        document.getElementById('productName').value = postData.name;
+        document.getElementById('productPrice').value = postData.price;
+        document.getElementById('productDescription').value = postData.description;
+
+        // 수정된 게시글 저장
+        document.getElementById('editPostForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const updatedName = document.getElementById('productName').value;
+            const updatedPrice = document.getElementById('productPrice').value;
+            const updatedDescription = document.getElementById('productDescription').value;
+
+            // 게시글 정보 업데이트
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+            posts[postIndex].name = updatedName;
+            posts[postIndex].price = updatedPrice;
+            posts[postIndex].description = updatedDescription;
+
+            localStorage.setItem('posts', JSON.stringify(posts)); // 업데이트된 게시글 저장
+            alert('게시글이 수정되었습니다.');
+
+            // 수정 후 게시물 관리 페이지로 이동
+            localStorage.removeItem('editPostIndex'); // 수정 후 임시 데이터 삭제
+            localStorage.removeItem('editPostData');
+            window.location.href = 'bb.html';
+        });
+    </script>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="welcome.HTML">홈</a></li>
+                <li><a href="a.HTML">상품 목록</a></li>
+                <li><a href="b.html">판매/관리</a></li>
+                <li><button id="backButton">뒤로가기</button></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="navbar.js"></script>
+
+</body>
+</html>
