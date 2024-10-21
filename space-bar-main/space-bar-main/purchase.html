@@ -18,7 +18,7 @@
 
             if (!product) {
                 alert('선택한 상품이 없습니다.');
-                window.location.href = 'buyer.html'; // 상품이 없으면 목록으로 돌아감
+                window.location.href = 'a.html'; // 상품이 없으면 목록으로 돌아감
                 return;
             }
 
@@ -44,5 +44,17 @@
             displayPurchaseInfo();
         };
     </script>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="welcome.HTML">홈</a></li>
+                <li><a href="a.HTML">상품 목록</a></li>
+                <li><a href="b.html">판매/관리</a></li>
+                <li><button id="backButton">뒤로가기</button></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="navbar.js"></script>
+
 </body>
 </html>
