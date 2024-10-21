@@ -10,6 +10,12 @@
     <h1>판매 중인 농산물 목록</h1>
     <div id="postsList"></div>
 
+    <div>
+        <input type="text" id="searchInput" placeholder="상품 이름을 입력하세요" />
+        <button id="searchButton">검색</button>
+    </div>
+    <div id="searchResults"></div>
+
     <script>
         // 저장된 게시글을 불러와서 화면에 표시
         function displayPosts() {
@@ -51,7 +57,12 @@
             displayPosts();
         };
     </script>
+
+    <br/>
+    <br/>
+    <br/>
     <!-- 하단에 뒤로가기 버튼 -->
+
     <footer>
         <nav>
             <ul>
@@ -63,6 +74,7 @@
         </nav>
     </footer>
     <script src="navbar.js"></script>
+    <script src="buyer-search.js"></script>
 
 </body>
 </html>

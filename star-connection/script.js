@@ -11,7 +11,7 @@ function savePost(productName, productPrice, productImage, productDescription, s
     posts.push(newPost);
     localStorage.setItem('posts', JSON.stringify(posts));
     alert('게시글이 저장되었습니다.');
-    window.location.href = 'bb.html';
+    window.location.href = 'manage.html';
 }
 
 // 판매자용 페이지에서 게시글 제출 처리
