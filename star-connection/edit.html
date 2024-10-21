@@ -28,7 +28,7 @@
 
         if (!postData) {
             alert('수정할 게시글 정보가 없습니다.');
-            window.location.href = 'bb.html'; // 게시글 관리 페이지로 이동
+            window.location.href = 'manage.html'; // 게시글 관리 페이지로 이동
         }
 
         // 수정할 게시글 정보로 입력 폼 채우기
@@ -56,15 +56,15 @@
             // 수정 후 게시물 관리 페이지로 이동
             localStorage.removeItem('editPostIndex'); // 수정 후 임시 데이터 삭제
             localStorage.removeItem('editPostData');
-            window.location.href = 'bb.html';
+            window.location.href = 'manage.html';
         });
     </script>
     <footer>
         <nav>
             <ul>
-                <li><a href="welcome.HTML">홈</a></li>
-                <li><a href="a.HTML">상품 목록</a></li>
-                <li><a href="b.html">판매/관리</a></li>
+                <li><a href="welcome.html">홈</a></li>
+                <li><a href="buy.html">상품 목록</a></li>
+                <li><a href="sellormanage.html">판매/관리</a></li>
                 <li><button id="backButton">뒤로가기</button></li>
             </ul>
         </nav>

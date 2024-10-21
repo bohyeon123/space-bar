@@ -18,7 +18,7 @@
 
             if (!product) {
                 alert('선택한 상품이 없습니다.');
-                window.location.href = 'a.html'; // 상품이 없으면 목록으로 돌아감
+                window.location.href = 'buy.html'; // 상품이 없으면 목록으로 돌아감
                 return;
             }
 
@@ -36,7 +36,7 @@
         document.getElementById('payButton').addEventListener('click', function() {
             alert('결제가 완료되었습니다!');
             localStorage.removeItem('selectedProduct'); // 결제 후 선택한 상품 정보 제거
-            window.location.href = 'a.html'; // 결제 후 다시 상품 목록으로 이동
+            window.location.href = 'buy.html'; // 결제 후 다시 상품 목록으로 이동
         });
 
         // 페이지 로드 시 구매 정보 표시
@@ -47,9 +47,9 @@
     <footer>
         <nav>
             <ul>
-                <li><a href="welcome.HTML">홈</a></li>
-                <li><a href="a.HTML">상품 목록</a></li>
-                <li><a href="b.html">판매/관리</a></li>
+                <li><a href="welcome.html">홈</a></li>
+                <li><a href="buy.html">상품 목록</a></li>
+                <li><a href="sellormanage.html">판매/관리</a></li>
                 <li><button id="backButton">뒤로가기</button></li>
             </ul>
         </nav>

@@ -49,7 +49,7 @@
             // 수정할 게시글 정보를 localStorage에 저장하고 수정 페이지로 이동
             localStorage.setItem('editPostIndex', index);  // 수정할 게시글의 인덱스 저장
             localStorage.setItem('editPostData', JSON.stringify(post)); // 수정할 게시글 데이터 저장
-            window.location.href = 'edit-post.html'; // 수정 페이지로 이동
+            window.location.href = 'edit.html'; // 수정 페이지로 이동
         }
 
         // 게시글 삭제 기능
@@ -73,9 +73,9 @@
     <footer>
         <nav>
             <ul>
-                <li><a href="welcome.HTML">홈</a></li>
-                <li><a href="a.HTML">상품 목록</a></li>
-                <li><a href="b.html">판매/관리</a></li>
+                <li><a href="welcome.html">홈</a></li>
+                <li><a href="buy.html">상품 목록</a></li>
+                <li><a href="sellormanage.html">판매/관리</a></li>
                 <li><button id="backButton">뒤로가기</button></li>
             </ul>
         </nav>
