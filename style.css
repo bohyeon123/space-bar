@@ -1,0 +1,213 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'GmarketSansMedium';
+    text-align: center;
+    font-size: 35px;
+  
+
+}
+h3 {
+    font-family: 'GmarketSansMedium';
+    text-align: center;
+}
+
+.user-selection{
+	text-align: center;
+}
+
+.button1 {
+    font-family: 'GmarketSansMedium';
+    background-color:#ffaa00;
+    color: #ffffff;
+    text-decoration-line : none;
+    display :inline-block;
+    border:none;
+    border-radius:10px;
+    padding:15px;
+    min-height:80px; 
+    min-width: 210px;
+    font-size: 30px;
+    text-align: center; 
+    line-height: 50px; 
+    height: 50px; 
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.button2 {
+    font-family: 'GmarketSansMedium';
+    background-color:#3a3afd;
+    color: #ffffff;
+    text-decoration-line : none;
+    display :inline-block;
+    border:none;
+    border-radius:10px;
+    padding:15px;
+    min-height:80px; 
+    min-width: 210px;
+    font-size: 30px;
+    text-align: center; 
+    line-height: 50px; 
+    height: 50px; 
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.button1:hover {
+    background-color:#cb8801;
+    color: #e3e3e3;
+    transition: 0.7s;
+}
+
+.button2:hover {
+    background-color:#22228c;
+    color: #e3e3e3;
+    transition: 0.7s;
+}
+
+.text {
+    font-family: 'GmarketSansMedium';
+    background-color:#ffffff;
+    color: #000000;
+    text-decoration-line : none;
+    display :inline-block;
+    border:none;
+    border-radius:10px;
+    padding:15px;
+    min-height:20px; 
+    min-width: 0px;
+    
+}
+.write {
+    font-family: 'GmarketSansMedium';
+    background-color:#ffffff;
+    color: #000000;
+    text-decoration-line : #000000;
+    display :inline-block;
+    border: #000000;
+    border-radius:10px;
+    padding:5px;
+    min-height:20px; 
+    min-width: 10px;
+    box-shadow: 0px 0px 3px 0px gray;
+}
+/* 푸터를 하단에 고정하는 스타일 */
+/* 푸터를 하단에 고정하는 스타일 */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 1px 0;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+#backButton {
+    background-color: #ffffff; /* 녹색 */
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#backButton:hover {
+    background-color: #b8b8b8; /* 버튼에 마우스를 올리면 색상 변경 */
+}
+body {
+    background-color: rgba(188, 228, 228, 0.5);
+    
+}
+type {font-family: 'GmarketSansMedium';}
+
+#slider-container {
+    position: fixed; /* 슬라이더를 화면의 고정된 위치에 두기 */
+    bottom: 20px; /* 화면 맨 아래에서 20px 위로 */
+    left: 20px; /* 화면 오른쪽에서 20px 왼쪽으로 */
+    background-color: rgba(188, 228, 228, 0);
+    padding: 1px;
+    box-shadow: 0 2px 5px rgba(188, 228, 228, 0); /* 그림자 효과 */
+    text-align: center;
+    z-index: 1000; /* 슬라이더가 항상 위에 보이도록 설정 */
+}
+
+#size-indicator {
+    font-family: 'GmarketSansMedium';
+    font-size: 14px;
+    display: inline-block;
+    margin-right: 2px;
+    line-height: 3px;
+}
+
+#rangeslider {
+    width: 100px;
+    height: 8px; /* 슬라이더 바의 높이 고정 */
+    margin: 0;
+    padding: 0;
+    position: relative;
+    vertical-align: middle;
+    appearance: none;
+}
+
+/* 슬라이더 바 스타일 */
+#rangeslider::-webkit-slider-runnable-track {
+    height: 5px;
+    background: #ddd;
+    border-radius: 3px;
+}
+
+/* 슬라이더 손잡이 스타일 */
+#rangeslider::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+    appearance: none;
+    position: relative;
+    top: -6px; /* 슬라이더 바 중앙에 위치하도록 조정 */
+}
+
+#rangeslider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    top: -6px;
+}
