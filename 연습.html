@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별이음 농산물 예약페이지</title>
+    <link rel="stylesheet" href="style효주.css">
+</head>
+<body>
+    <h3>농산물 구매 예약</h3>
+    <h4>⭐이 페이지에서 예약하시면 10월 25일에 '괴산고등학교 별이음 부스'에서 수령하실 수 있습니다.⭐</h4>
+    <form id="reservationForm">
+        <fieldset>
+            <legend>예약자 정보</legend>
+            <label for="sub">예약자 명:</label>
+            <input type="text" name="person" id="sub" placeholder="예) 홍길동"/><br>
+            <p></p>
+            <label for="phone">휴대폰: </label>
+            <input type="tel" name="tell" id="phone" placeholder="-제외 숫자만"
+            pattern="01[0-9]{1}[0-9]{3,4}[0-9]{4}"/><br>
+        </fieldset>
+        <p></p>
+        <fieldset>
+            <legend>구매하실 작물</legend>
+            <input type="checkbox" name="op" id="choice1" value="Shiitake mushrooms"/>표고버섯
+            <input type="checkbox" name="op" id="choice2" value="Apples"/>사과<br>
+        </fieldset>
+        <br>
+        <input type="submit" value="예약"/>
+        <input type="reset" value="취소"/>
+    </form>
+
+    <script>
+        document.getElementById('reservationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const person = document.getElementById('sub').value;
+            const tell = document.getElementById('phone').value;
+            const choices = Array.from(document.querySelectorAll('input[name="op"]:checked')).map(el => el.value);
+
+            const reservationData = {
+                person: person,
+                tell: tell,
+                choices: choices
+            };
+
+            
+            localStorage.setItem('reservationData', JSON.stringify(reservationData));
+
+            alert('예약이 완료되었습니다!'); 
+        });
+    </script>
+</body>
+</html>
