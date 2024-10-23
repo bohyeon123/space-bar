@@ -9,24 +9,28 @@
 <body>
     <h1></h1>
     <p>판매하실 건가요? 관리하실 건가요?</p>
+    <br><br>
     <div class="user-selection">
         <a href="sell.html" class="button1">판매</a>
         <a href="manage.html" class="button2">관리</a>
     </div>
-    <br/>
-    <br/>
-    <br/>
-    <footer>
+    <div id="slider-container">
+        <div id="size-indicator">글자 크기 <span>16</span>pt</div>
+        <input type="range" id="rangeslider" min="10" max="20" value="16">
+    </div>
+    <header>
         <nav>
             <ul>
-                <li><a href="welcome.html">홈</a></li>
-                <li><a href="buy.html">상품 목록</a></li>
-                <li><a href="sellormanage.html">판매/관리</a></li>
-                <li><button id="backButton">뒤로가기</button></li>
+                <li><a href="welcome.html">🏠홈</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="buy.html">📃상품 목록</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="sellormanage.html">🛍️판매/관리</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="">🎁픽업 서비스</a></li>
+                <li><button id="backButton">↩️뒤로가기</button></li>
             </ul>
         </nav>
-    </footer>
+    </header>
     <script src="navbar.js"></script>
+    
 
 </body>
 </html>

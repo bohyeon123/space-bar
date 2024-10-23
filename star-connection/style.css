@@ -8,17 +8,80 @@
 h1 {
     font-family: 'GmarketSansMedium';
     text-align: center;
+}
 
+h2 {
+    font-family: 'GmarketSansMedium';
+    text-align: center;
+  
 
 }
+h3 {
+    font-family: 'GmarketSansMedium';
+    text-align: center;
+}
+
 p {
     font-family: 'GmarketSansMedium';
+    text-align: center;
+}
+
+p1 {
+    font-family: 'GmarketSansMedium';
+    text-align: center;
+}
+
+p2 {
+    font-family: 'GmarketSansMedium';
+    padding-left: 40px;
+}
+
+
+section {
+    font-family:'GmarketSansMedium';
     text-align: center;
 }
 
 .user-selection{
 	text-align: center;
 }
+
+button{
+    background-color:#3a3afd;
+    color:#ffffff;
+    font-family:'GmarketSansMedium';
+    padding: 20px 80px;
+    border:none;
+    border-radius: 10px;
+    cursor:pointer;
+    transition: background-color 0.3s;
+
+}
+
+button:hover{
+    background-color:#22228c;
+
+}
+button3{
+    background-color:#3a3afd;
+    color:#ffffff;
+    font-family:'GmarketSansMedium';
+    padding: 10px 60px;
+    border:none;
+    border-radius: 10px;
+    cursor:pointer;
+    transition: background-color 0.3s;
+    margin-left: 900px;
+    position: fixed;
+}
+button3:hover{
+    background-color:#22228c;
+    
+
+}
+
+
+
 
 .button1 {
     font-family: 'GmarketSansMedium';
@@ -29,8 +92,16 @@ p {
     border:none;
     border-radius:10px;
     padding:15px;
-    min-height:20px; 
-    min-width: 110px;
+    min-height:80px; 
+    min-width: 210px;
+    text-align: center; 
+    line-height: 50px; 
+    height: 50px; 
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center;
+    line-height: 1.3;
+    font-weight: 600;
 }
 
 .button2 {
@@ -42,8 +113,16 @@ p {
     border:none;
     border-radius:10px;
     padding:15px;
-    min-height:20px; 
-    min-width: 110px;
+    min-height:80px; 
+    min-width: 210px;
+    text-align: center; 
+    line-height: 50px; 
+    height: 50px; 
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center;
+    line-height: 1.3;
+    font-weight: 600;
 }
 
 .button1:hover {
@@ -84,37 +163,37 @@ p {
     min-width: 10px;
     box-shadow: 0px 0px 3px 0px gray;
 }
-/* 푸터를 하단에 고정하는 스타일 */
-/* 푸터를 하단에 고정하는 스타일 */
-footer {
+
+
+header {
     position: fixed;
-    bottom: 0;
     width: 100%;
+    top:0px;
     background-color: #ffffff;
     text-align: center;
-    padding: 1px 0;
-    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.1);
+    font-family:'GmarketSansMedium';
+
 }
 
-footer ul {
+header ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 10px;
 }
 
-footer ul li {
+header ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 30px;
 }
 
-footer a {
+header a {
     text-decoration: none;
     color: #000;
-    font-size: 16px;
+    
 }
 
-footer a:hover {
-    text-decoration: underline;
+header a:hover {
+    text-decoration: overline;
 }
 
 #backButton {
@@ -127,5 +206,98 @@ footer a:hover {
 }
 
 #backButton:hover {
-    background-color: #b8b8b8; /* 버튼에 마우스를 올리면 색상 변경 */
+    background-color: #b8b8b8; 
+}
+body {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-top: 80px;
+    
+    
+}
+
+#slider-container {
+    position: fixed; 
+    bottom: 20px;
+    left: 20px; 
+    background-color: rgba(188, 228, 228, 0);
+    padding: 1px;
+    box-shadow: 0 2px 5px rgba(188, 228, 228, 0);
+    text-align: center;
+    z-index: 1000; 
+}
+
+#size-indicator {
+    font-family: 'GmarketSansMedium';
+    font-size: 14px;
+    display: inline-block;
+    margin-right: 2px;
+    line-height: 3px;
+}
+
+#rangeslider {
+    width: 100px;
+    height: 8px; 
+    margin: 0;
+    padding: 0;
+    position: relative;
+    vertical-align: middle;
+    appearance: none;
+}
+
+/* 슬라이더 바 스타일 */
+#rangeslider::-webkit-slider-runnable-track {
+    height: 5px;
+    background: #ddd;
+    border-radius: 3px;
+}
+
+/* 슬라이더 손잡이 스타일 */
+#rangeslider::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+    appearance: none;
+    position: relative;
+    top: -6px; 
+}
+
+#rangeslider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    top: -6px;
+}
+input{
+
+    height:30px;
+    border-radius: 10px;
+    border: none;
+    background-color:#ddd;
+    font-size: 16px;
+}
+#signupName{
+    width:245px;
+}
+#signupPhone{
+    width:205px;
+}
+#signupUsername{
+    width:225px;
+}
+#signupPassword{
+    width:205px;
+}
+#loginUsername{
+    width:225px;
+}
+#loginPassword{
+    width:205px;
+}
+#welcomeMassage{
+    text-align: center;
 }

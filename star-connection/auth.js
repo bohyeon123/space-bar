@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 회원가입 처리 함수
+    
     const signupForm = document.getElementById('signupForm');
     if (signupForm) {
         signupForm.addEventListener('submit', function(event) {
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const username = document.getElementById('signupUsername').value;
             const password = document.getElementById('signupPassword').value;
 
-            // 사용자 정보를 localStorage에 저장
+            
             const users = JSON.parse(localStorage.getItem('users')) || [];
             const userExists = users.some(user => user.username === username);
 
@@ -20,14 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 users.push({ name: name, phone: phone, username: username, password: password });
                 localStorage.setItem('users', JSON.stringify(users));
                 alert('회원가입이 완료되었습니다.');
-                window.location.href = 'login.html'; // 회원가입 후 로그인 페이지로 이동
+                window.location.href = 'login.html'; 
             }
 
             signupForm.reset();
         });
     }
 
-    // 로그인 처리 함수 (변경 없음)
+    
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
         loginForm.addEventListener('submit', function(event) {
@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (validUser) {
                 alert('로그인 성공!');
-                localStorage.setItem('loggedInUser', username); // 로그인 성공 시 사용자 정보 저장
-                window.location.href = 'welcome.html'; // 로그인 성공 시 환영 페이지로 이동
+                localStorage.setItem('loggedInUser', username); 
+                window.location.href = 'welcome.html'; 
             } else {
                 alert('사용자 이름 또는 비밀번호가 잘못되었습니다.');
             }
@@ -51,3 +51,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+document.addEventListener("DOMContentLoaded", function(){
+    
+    var resizableFontSize = 16;
+    document.body.style.fontSize = resizableFontSize + "pt";
+    document.querySelector("#size-indicator > span").innerText = resizableFontSize;
+
+    
+    document.getElementById("rangeslider").oninput = function(){
+        resizeFont(this.value);
+    }
+});
+
+
+function resizeFont(value) {
+    document.querySelector("#size-indicator > span").innerText = value;
+    document.body.style.fontSize = value + "pt";  
+}

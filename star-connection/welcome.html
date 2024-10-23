@@ -11,23 +11,25 @@
 <body>
     <div class="navbar">
         <div class="navbar-right">
-            <p id="userInfo"></p>
-            <button id="logoutButton">로그아웃</button>
+            <p2 id="userInfo"></p2> 
+            <button3 id="logoutButton">로그아웃</button3>
         </div>
     </div>
 
+    <br><br>
     <h1>환영합니다!</h1>
     <p id="welcomeMessage"></p>
 
     <h1></h1>
     <p>소비자인가요? 판매자인가요?</p>
+    <br><br>
     <div class="user-selection">
         <a href="buy.html" class="button1">소비자</a>
         <a href="sellormanage.html" class="button2">판매자</a>
     </div>
 
     <script>
-        // 페이지가 로드될 때 로그인된 사용자 정보 표시
+        
         window.onload = function() {
             const loggedInUser = localStorage.getItem('loggedInUser');
             const users = JSON.parse(localStorage.getItem('users')) || [];
@@ -35,33 +37,37 @@
 
             if (!loggedInUser || !user) {
                 alert('로그인 상태가 아닙니다.');
-                window.location.href = 'login.html'; // 로그인되지 않았으면 로그인 페이지로 이동
+                window.location.href = 'login.html'; 
             } else {
                 document.getElementById('welcomeMessage').innerText = `${user.name}님, 환영합니다!`;
                 document.getElementById('userInfo').innerText = `사용자 이름: ${user.username}`;
             }
         };
 
-        // 로그아웃 처리
+        
         document.getElementById('logoutButton').addEventListener('click', function() {
             localStorage.removeItem('loggedInUser');
             alert('로그아웃 되었습니다.');
-            window.location.href = 'login.html'; // 로그아웃 후 로그인 페이지로 이동
+            window.location.href = 'login.html'; 
         });
+
+        
     </script>
-    <br/>
-    <br/>
-    <br/>
-    <footer>
+    <header>
         <nav>
             <ul>
-                <li><a href="welcome.html">홈</a></li>
-                <li><a href="buy.html">상품 목록</a></li>
-                <li><a href="sellormanage.html">판매/관리</a></li>
-                <li><button id="backButton">뒤로가기</button></li>
+                <li><a href="welcome.html">🏠홈</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="buy.html">📃상품 목록</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="sellormanage.html">🛍️판매/관리</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="">🎁픽업 서비스</a></li>
+                <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button id="backButton">↩️뒤로가기</button></li>
             </ul>
         </nav>
-    </footer>
+    </header>
+    <div id="slider-container">
+        <div id="size-indicator">글자 크기 <span>16</span>pt</div>
+        <input type="range" id="rangeslider" min="10" max="20" value="16">
+    </div>
     <script src="navbar.js"></script>
 
 </body>

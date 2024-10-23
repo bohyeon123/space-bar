@@ -1,8 +1,8 @@
-// 게시글 목록을 화면에 보여주는 함수
+
 function displayProducts() {
     const productList = document.getElementById('productList');
     const posts = JSON.parse(localStorage.getItem('posts')) || [];
-    productList.innerHTML = ''; // 게시글 목록 초기화
+    productList.innerHTML = ''; 
 
     if (posts.length === 0) {
         productList.innerHTML = '<p>현재 판매 중인 농산물이 없습니다.</p>';
@@ -24,7 +24,7 @@ function displayProducts() {
     }
 }
 
-// 페이지가 로드되면 저장된 제품들을 보여줌
+
 window.onload = function() {
     displayProducts();
 };

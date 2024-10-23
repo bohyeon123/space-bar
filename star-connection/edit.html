@@ -22,21 +22,21 @@
     </form>
 
     <script>
-        // 수정할 게시글 정보 로드
+        
         const postIndex = localStorage.getItem('editPostIndex');
         const postData = JSON.parse(localStorage.getItem('editPostData'));
 
         if (!postData) {
             alert('수정할 게시글 정보가 없습니다.');
-            window.location.href = 'manage.html'; // 게시글 관리 페이지로 이동
+            window.location.href = 'manage.html'; 
         }
 
-        // 수정할 게시글 정보로 입력 폼 채우기
+        
         document.getElementById('productName').value = postData.name;
         document.getElementById('productPrice').value = postData.price;
         document.getElementById('productDescription').value = postData.description;
 
-        // 수정된 게시글 저장
+        
         document.getElementById('editPostForm').addEventListener('submit', function(event) {
             event.preventDefault();
 
@@ -44,34 +44,39 @@
             const updatedPrice = document.getElementById('productPrice').value;
             const updatedDescription = document.getElementById('productDescription').value;
 
-            // 게시글 정보 업데이트
+            
             const posts = JSON.parse(localStorage.getItem('posts')) || [];
             posts[postIndex].name = updatedName;
             posts[postIndex].price = updatedPrice;
             posts[postIndex].description = updatedDescription;
 
-            localStorage.setItem('posts', JSON.stringify(posts)); // 업데이트된 게시글 저장
+            localStorage.setItem('posts', JSON.stringify(posts)); 
             alert('게시글이 수정되었습니다.');
 
-            // 수정 후 게시물 관리 페이지로 이동
-            localStorage.removeItem('editPostIndex'); // 수정 후 임시 데이터 삭제
+            
+            localStorage.removeItem('editPostIndex'); 
             localStorage.removeItem('editPostData');
             window.location.href = 'manage.html';
         });
     </script>
-    <br/>
-    <br/>
-    <br/>
-    <footer>
+    <header>
         <nav>
             <ul>
-                <li><a href="welcome.html">홈</a></li>
-                <li><a href="buy.html">상품 목록</a></li>
-                <li><a href="sellormanage.html">판매/관리</a></li>
-                <li><button id="backButton">뒤로가기</button></li>
+                <li><a href="welcome.html">🏠홈</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="buy.html">📃상품 목록</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="sellormanage.html">🛍️판매/관리</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="">🎁픽업 서비스</a></li>
+                <li><button id="backButton">↩️뒤로가기</button></li>
             </ul>
         </nav>
-    </footer>
+    </header>
+
+     </div>
+    <div id="slider-container">
+        <div id="size-indicator">글자 크기 <span>16</span>pt</div>
+        <input type="range" id="rangeslider" min="10" max="20" value="16">
+    </div>
+    
     <script src="navbar.js"></script>
 
 </body>

@@ -12,13 +12,13 @@
     <button id="payButton">결제하기</button>
 
     <script>
-        // 구매할 상품 정보를 로드하여 화면에 표시
+        
         function displayPurchaseInfo() {
             const product = JSON.parse(localStorage.getItem('selectedProduct'));
 
             if (!product) {
                 alert('선택한 상품이 없습니다.');
-                window.location.href = 'buy.html'; // 상품이 없으면 목록으로 돌아감
+                window.location.href = 'buy.html'; 
                 return;
             }
 
@@ -32,32 +32,36 @@
             `;
         }
 
-        // 결제 버튼 클릭 시 처리
+       
         document.getElementById('payButton').addEventListener('click', function() {
             alert('결제가 완료되었습니다!');
-            localStorage.removeItem('selectedProduct'); // 결제 후 선택한 상품 정보 제거
-            window.location.href = 'buy.html'; // 결제 후 다시 상품 목록으로 이동
+            localStorage.removeItem('selectedProduct'); 
+            window.location.href = 'buy.html'; 
         });
 
-        // 페이지 로드 시 구매 정보 표시
+        
         window.onload = function() {
             displayPurchaseInfo();
         };
     </script>
-    <br/>
-    <br/>
-    <br/>
-    <footer>
+    <header>
         <nav>
             <ul>
-                <li><a href="welcome.html">홈</a></li>
-                <li><a href="buy.html">상품 목록</a></li>
-                <li><a href="sellormanage.html">판매/관리</a></li>
-                <li><button id="backButton">뒤로가기</button></li>
+                <li><a href="welcome.html">🏠홈</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="buy.html">📃상품 목록</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="sellormanage.html">🛍️판매/관리</a></li>
+                
+                <li><button id="backButton">↩️뒤로가기</button></li>
             </ul>
         </nav>
-    </footer>
+    </header>
     <script src="navbar.js"></script>
+
+     </div>
+    <div id="slider-container">
+        <div id="size-indicator">글자 크기 <span>16</span>pt</div>
+        <input type="range" id="rangeslider" min="10" max="20" value="16">
+    </div>
 
 </body>
 </html>

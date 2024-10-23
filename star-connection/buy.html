@@ -10,18 +10,12 @@
     <h1>판매 중인 농산물 목록</h1>
     <div id="postsList"></div>
 
-    <div>
-        <input type="text" id="searchInput" placeholder="상품 이름을 입력하세요" />
-        <button id="searchButton">검색</button>
-    </div>
-    <div id="searchResults"></div>
-
     <script>
-        // 저장된 게시글을 불러와서 화면에 표시
+        
         function displayPosts() {
             const posts = JSON.parse(localStorage.getItem('posts')) || [];
             const postsList = document.getElementById('postsList');
-            postsList.innerHTML = ''; // 게시글 목록 초기화
+            postsList.innerHTML = ''; 
 
             posts.forEach((post, index) => {
                 const postDiv = document.createElement('div');
@@ -40,41 +34,43 @@
             });
         }
 
-        // 상품 구매 버튼 클릭 시 구매 페이지로 이동
+        
         function purchaseProduct(index) {
             const posts = JSON.parse(localStorage.getItem('posts')) || [];
             const product = posts[index];
 
-            // 선택한 상품 정보를 localStorage에 저장 (구매 페이지에서 사용)
+
             localStorage.setItem('selectedProduct', JSON.stringify(product));
 
-            // 구매 페이지로 이동
+           
             window.location.href = 'purchase.html';
         }
 
-        // 페이지가 로드될 때 게시글 목록 표시
+        
         window.onload = function() {
             displayPosts();
         };
     </script>
-
-    <br/>
-    <br/>
-    <br/>
-    <!-- 하단에 뒤로가기 버튼 -->
-
-    <footer>
+    
+    <header>
         <nav>
             <ul>
-                <li><a href="welcome.html">홈</a></li>
-                <li><a href="buy.html">상품 목록</a></li>
-                <li><a href="sellormanage.html">판매/관리</a></li>
-                <li><button id="backButton">뒤로가기</button></li>
+                <li><a href="welcome.html">🏠홈</a></li>
+                <li><a href="buy.html">📃상품 목록</a></li>
+                <li><a href="sellormanage.html">🛍️판매/관리</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="">🎁픽업 서비스</a></li>
+                <li><button id="backButton">↩️뒤로가기</button></li>
             </ul>
         </nav>
-    </footer>
+    </header>
+
+     </div>
+    <div id="slider-container">
+        <div id="size-indicator">글자 크기 <span>16</span>pt</div>
+        <input type="range" id="rangeslider" min="10" max="20" value="16">
+    </div>
+    
     <script src="navbar.js"></script>
-    <script src="buyer-search.js"></script>
 
 </body>
 </html>
