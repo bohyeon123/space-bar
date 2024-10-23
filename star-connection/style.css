@@ -244,14 +244,14 @@ body {
     appearance: none;
 }
 
-/* 슬라이더 바 스타일 */
+
 #rangeslider::-webkit-slider-runnable-track {
     height: 5px;
     background: #ddd;
     border-radius: 3px;
 }
 
-/* 슬라이더 손잡이 스타일 */
+
 #rangeslider::-webkit-slider-thumb {
     width: 20px;
     height: 20px;
