@@ -36,6 +36,17 @@ p2 {
     padding-left: 40px;
 }
 
+h3 { font-family: 'GmarketSansMedium';}
+
+h4 {
+    font-family: 'GmarketSansMedium';
+    text-align: center;
+}
+
+form { font-family: 'GmarketSansMedium';}
+
+input { font-family: 'GmarketSansMedium';}
+
 
 section {
     font-family:'GmarketSansMedium';
@@ -44,7 +55,10 @@ section {
 
 .user-selection{
 	text-align: center;
+
 }
+
+
 
 button{
     background-color:#3a3afd;
@@ -193,15 +207,15 @@ header a {
 }
 
 header a:hover {
-    text-decoration: overline;
+    text-decoration:underline;
 }
 
 #backButton {
     background-color: #ffffff; /* 녹색 */
     color: rgb(0, 0, 0);
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
+    border-radius: 10px;
+    padding: 10px 30px;
     cursor: pointer;
 }
 
@@ -211,6 +225,7 @@ header a:hover {
 body {
     background-color: rgba(255, 255, 255, 0.5);
     padding-top: 80px;
+    padding-bottom: 100px;
     
     
 }
@@ -280,6 +295,10 @@ input{
     background-color:#ddd;
     font-size: 16px;
 }
+
+.center-text {
+    text-align: center;}
+
 #signupName{
     width:245px;
 }
@@ -300,4 +319,12 @@ input{
 }
 #welcomeMassage{
     text-align: center;
+}
+.custom-fieldset {
+    width: 50%; 
+    margin: 0 auto; 
+    text-align: center;
+}
+.checkbox {
+    padding-left: 20px;
 }
