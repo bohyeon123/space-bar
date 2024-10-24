@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별이음 농산물 예약페이지</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="//typesquare.com/accessor/ko/script/typesquare.js?66fd514f1eb84bffa0f20d0cac1e02e5" charset="utf-8"></script>
+</head>
+<body>
+    <h1>농산물 구매 예약</h1>
+    <h4>⭐이 페이지에서 예약하시면 10월 25일에 '괴산고등학교 별이음 부스'에서 수령하실 수 있습니다.⭐</h4>
+    <form id="reservationForm">
+        <fieldset class="custom-fieldset">
+            <legend class="center-text">예약자 정보</legend>
+            <label for="sub">예약자 명:</label>
+            <input type="text" name="person" id="sub" placeholder="예) 홍길동"/><br>
+            <p></p>
+            <label for="phone">휴대폰: </label>
+            <input type="tel" name="tell" id="phone" placeholder="-제외 숫자만"
+            pattern="01[0-9]{1}[0-9]{3,4}[0-9]{4}"/><br>
+        </fieldset>
+        <p></p>
+        <fieldset class="custom-fieldset">
+            <legend class="center-text">구매하실 작물</legend>
+            <input type="checkbox" name="op" id="choice1" value="Shiitake mushrooms"/>표고버섯
+            <input type="checkbox" name="op" id="choice2" value="Apples"/>사과<br>
+        </fieldset>
+        <br>
+        <input type="submit" value="예약"/>
+        <input type="reset" value="취소"/>
+    </form>
+
+    <script>
+        document.getElementById('reservationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const person = document.getElementById('sub').value;
+            const tell = document.getElementById('phone').value;
+            const choices = Array.from(document.querySelectorAll('input[name="op"]:checked')).map(el => el.value);
+
+            const reservationData = {
+                person: person,
+                tell: tell,
+                choices: choices
+            };
+
+            
+            localStorage.setItem('reservationData', JSON.stringify(reservationData));
+
+            alert('예약이 완료되었습니다!'); 
+        });
+    </script>
+    </div>
+    <div id="slider-container">
+        <div id="size-indicator">글자 크기 <span>16</span>pt</div>
+        <input type="range" id="rangeslider" min="10" max="25" value="16">
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="welcome.html">🏠홈</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="buy.html">📃상품 목록</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="sellormanage.html">🛍️판매/관리</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="pickup.html">🎁픽업 서비스</a></li>
+                <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button4 id="backButton">↩️뒤로가기</button4></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            
+            var resizableFontSize = 16;
+            document.body.style.fontSize = resizableFontSize + "pt";
+            document.querySelector("#size-indicator > span").innerText = resizableFontSize;
+
+            
+            document.getElementById("rangeslider").oninput = function(){
+                resizeFont(this.value);
+            }
+        });
+
+        
+        function resizeFont(value) {
+            document.querySelector("#size-indicator > span").innerText = value;
+            document.body.style.fontSize = value + "pt";  
+        }
+    </script>
+</body>
+</html>
+    

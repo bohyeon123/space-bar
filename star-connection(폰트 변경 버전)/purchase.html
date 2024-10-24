@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구매 페이지</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="//typesquare.com/accessor/ko/script/typesquare.js?66fd514f1eb84bffa0f20d0cac1e02e5" charset="utf-8"></script>
+</head>
+<body>
+    <h1>상품 구매</h1>
+    <div id="purchaseInfo"></div>
+    <button id="payButton">결제하기</button>
+
+    <script>
+        
+        function displayPurchaseInfo() {
+            const product = JSON.parse(localStorage.getItem('selectedProduct'));
+
+            if (!product) {
+                alert('선택한 상품이 없습니다.');
+                window.location.href = 'buy.html'; 
+                return;
+            }
+
+            const purchaseInfo = document.getElementById('purchaseInfo');
+            purchaseInfo.innerHTML = `
+                <h2>${product.name}</h2>
+                <p>가격: ${product.price}원</p>
+                <p>설명: ${product.description}</p>
+                <p>판매자: ${product.seller}</p>
+                <img src="${product.image}" alt="${product.name}" width="200"><br>
+            `;
+        }
+
+       
+        document.getElementById('payButton').addEventListener('click', function() {
+            alert('결제가 완료되었습니다!');
+            localStorage.removeItem('selectedProduct'); 
+            window.location.href = 'buy.html'; 
+        });
+
+        
+        window.onload = function() {
+            displayPurchaseInfo();
+        };
+    </script>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="welcome.html">🏠홈</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="buy.html">📃상품 목록</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="pickup.html">🎁픽업 서비스</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="sellormanage.html">🛍️판매/관리</a></li>
+                <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button4 id="backButton">↩️뒤로가기</button4></li>
+            </ul>
+        </nav>
+    </header>
+    <script src="navbar.js"></script>
+
+     </div>
+    <div id="slider-container">
+        <div id="size-indicator">글자 크기 <span>16</span>pt</div>
+        <input type="range" id="rangeslider" min="10" max="25" value="16">
+    </div>
+
+</body>
+</html>

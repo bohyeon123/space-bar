@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시물 관리 페이지</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="//typesquare.com/accessor/ko/script/typesquare.js?66fd514f1eb84bffa0f20d0cac1e02e5" charset="utf-8"></script>
+</head>
+<body>
+    <h1>내 게시물 관리</h1>
+    <div id="myPostsList"></div>
+
+    <script>
+        const loggedInUser = localStorage.getItem('loggedInUser');
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const currentUser = users.find(user => user.username === loggedInUser);
+        const sellerName = currentUser ? currentUser.name : '알 수 없음';
+
+        
+        function displayMyPosts() {
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+            const myPostsList = document.getElementById('myPostsList');
+            myPostsList.innerHTML = ''; 
+
+            posts.forEach((post, index) => {
+                if (post.seller === sellerName) {
+                    const postDiv = document.createElement('div');
+                    postDiv.className = 'post';
+
+                    postDiv.innerHTML = `
+                        <h2>${post.name}</h2>
+                        <p>가격: ${post.price}원</p>
+                        <p>설명: ${post.description}</p>
+                        <img src="${post.image}" alt="${post.name}" width="200"><br>
+                        <button onclick="editPost(${index})">수정</button>
+                        <button onclick="deletePost(${index})">삭제</button>
+                    `;
+
+                    myPostsList.appendChild(postDiv);
+                }
+            });
+        }
+
+        
+        function editPost(index) {
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+            const post = posts[index];
+
+            
+            localStorage.setItem('editPostIndex', index);  
+            localStorage.setItem('editPostData', JSON.stringify(post)); 
+            window.location.href = 'edit.html'; 
+        }
+
+        
+        function deletePost(index) {
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+
+            const confirmDelete = confirm('정말로 이 게시글을 삭제하시겠습니까?');
+            if (confirmDelete) {
+                posts.splice(index, 1); 
+                localStorage.setItem('posts', JSON.stringify(posts));
+                alert('게시글이 삭제되었습니다.');
+                displayMyPosts(); 
+            }
+        }
+
+        
+        window.onload = function() {
+            displayMyPosts();
+        };
+    </script>
+    <header>
+        <nav>
+            <ul>
+                <li>&nbsp&nbsp&nbsp<a href="welcome.html">🏠홈</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="buy.html">📃상품 목록</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="sellormanage.html">🛍️판매/관리</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="pickup.html">🎁픽업 서비스</a></li>
+                <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button4 id="backButton">↩️뒤로가기</button4></li>
+            </ul>
+        </nav>
+    </header>
+
+     </div>
+    <div id="slider-container">
+        <div id="size-indicator">글자 크기 <span>16</span>pt</div>
+        <input type="range" id="rangeslider" min="10" max="25" value="16">
+    </div>
+    <script src="navbar.js"></script>
+
+</body>
+</html>
