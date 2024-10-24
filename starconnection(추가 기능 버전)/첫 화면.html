@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>농산물 판매 및 구매 사이트</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>⭐반갑습니다!⭐</h2>
+    <h3>처음 오셨나요?</h3>
+    <div class="user-selection">
+        <a href="signup.HTML" class="button1">처음 <br> 방문했어요</a>
+        <a href="login.HTML" class="button2">방문한 <br> 적이 있어요</a>
+    </div>
+    <div id="slider-container">
+        <div id="size-indicator">글자 크기 <span>16</span>pt</div>
+        <input type="range" id="rangeslider" min="10" max="25" value="16">
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            
+            var resizableFontSize = 16;
+            document.body.style.fontSize = resizableFontSize + "pt";
+            document.querySelector("#size-indicator > span").innerText = resizableFontSize;
+
+            
+            document.getElementById("rangeslider").oninput = function(){
+                resizeFont(this.value);
+            }
+        });
+
+        
+        function resizeFont(value) {
+            document.querySelector("#size-indicator > span").innerText = value;
+            document.body.style.fontSize = value + "pt";  
+        }
+    </script>
+ 
+</body>
+</html>

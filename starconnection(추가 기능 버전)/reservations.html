@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 페이지</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="reservations.js" defer></script> <!-- reservations.js 추가 -->
+</head>
+<body>
+    <h1>관리자 페이지</h1>
+    <h2>예약 목록</h2>
+    <div id="reservationsList"></div>
+    <button onclick="logout()">로그아웃</button>
+    <button onClick="location.href='admin.html'">뒤로가기</button>
+    
+    <script>
+        function logout() {
+            localStorage.removeItem('loggedInUser');
+            window.location.href = 'login.html';
+        }
+    </script>
+    
+</body>
+</html>
