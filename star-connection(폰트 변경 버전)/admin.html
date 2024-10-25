@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 페이지</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="reservations.js" defer></script> <!-- reservations.js 추가 -->
+</head>
+<body>
+    <h2>구매 및 예약 내역</h2>
+    <div class="user-selection">
+        <a href="purchasecheck.html" class="button1">구매 내역</a>
+        <a href="reservations.html" class="button2"> 예약 내역</a>
+    </div>
+    <div id="slider-container">
+        <div id="size-indicator">글자 크기 <span>16</span>pt</div>
+        <input type="range" id="rangeslider" min="10" max="25" value="16">
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            
+            var resizableFontSize = 16;
+            document.body.style.fontSize = resizableFontSize + "pt";
+            document.querySelector("#size-indicator > span").innerText = resizableFontSize;
+
+            
+            document.getElementById("rangeslider").oninput = function(){
+                resizeFont(this.value);
+            }
+        });
+
+        
+        function resizeFont(value) {
+            document.querySelector("#size-indicator > span").innerText = value;
+            document.body.style.fontSize = value + "pt";  
+        }
+    </script>
+</body>
+</html>

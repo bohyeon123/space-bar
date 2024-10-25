@@ -36,9 +36,11 @@ h4 {
     text-align: center;
 }
 
-form { font-family: '모리사와UD신고 M';}
+form { 
+    font-family: '모리사와UD신고 M';
+    text-align: center;
+}
 
-input { font-family: '모리사와UD신고 M';}
 
 
 section {
@@ -57,12 +59,13 @@ button{
     background-color:#3a3afd;
     color:#ffffff;
     font-family:'모리사와UD신고 M';
-    padding: 20px 80px;
+    font-size: 16pt;
+    padding: 10px 80px;
     border:none;
     border-radius: 10px;
     cursor:pointer;
     transition: background-color 0.3s;
-
+    text-align: center;
 }
 
 button:hover{
@@ -287,6 +290,7 @@ input{
     border: none;
     background-color:#ddd;
     font-size: 16px;
+    font-family: 'GmarketSansMedium';
 }
 
 .center-text {

@@ -29,63 +29,31 @@
         <br>
         <input type="submit" value="예약"/>
         <input type="reset" value="취소"/>
+        <p id="message" style="color:red;"></p>
     </form>
 
-    <script>
-        document.getElementById('reservationForm').addEventListener('submit', function(event) {
-            event.preventDefault(); 
-
-            const person = document.getElementById('sub').value;
-            const tell = document.getElementById('phone').value;
-            const choices = Array.from(document.querySelectorAll('input[name="op"]:checked')).map(el => el.value);
-
-            const reservationData = {
-                person: person,
-                tell: tell,
-                choices: choices
-            };
-
-            
-            localStorage.setItem('reservationData', JSON.stringify(reservationData));
-
-            alert('예약이 완료되었습니다!'); 
-        });
-    </script>
-    </div>
     <div id="slider-container">
         <div id="size-indicator">글자 크기 <span>16</span>pt</div>
         <input type="range" id="rangeslider" min="10" max="25" value="16">
     </div>
+
     <header>
         <nav>
             <ul>
                 <li><a href="welcome.html">🏠홈</a></li>
-                <li>&nbsp&nbsp&nbsp<a href="buy.html">📃상품 목록</a></li>
-                <li>&nbsp&nbsp&nbsp<a href="sellormanage.html">🛍️판매/관리</a></li>
-                <li>&nbsp&nbsp&nbsp<a href="pickup.html">🎁픽업 서비스</a></li>
-                <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button4 id="backButton">↩️뒤로가기</button4></li>
+                <li>&nbsp;&nbsp;&nbsp;<a href="buy.html">📃상품 목록</a></li>
+                <li>&nbsp;&nbsp;&nbsp;<a href="sellormanage.html">🛍️판매/관리</a></li>
+                <li>&nbsp;&nbsp;&nbsp;<a href="pickup.html">🎁픽업 서비스</a></li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="backButton">↩️뒤로가기</button></li>
             </ul>
         </nav>
     </header>
-    <script>
-        document.addEventListener("DOMContentLoaded", function(){
-            
-            var resizableFontSize = 16;
-            document.body.style.fontSize = resizableFontSize + "pt";
-            document.querySelector("#size-indicator > span").innerText = resizableFontSize;
-
-            
-            document.getElementById("rangeslider").oninput = function(){
-                resizeFont(this.value);
-            }
-        });
-
-        
-        function resizeFont(value) {
-            document.querySelector("#size-indicator > span").innerText = value;
-            document.body.style.fontSize = value + "pt";  
-        }
-    </script>
+    
+    <script src="pickup.js"></script> <!-- 자바스크립트 파일 연결 -->
+    <script src="navbar.js"></script>
+    <script src="localsorage.js"></script>
+    <script src="slider.js"></script>
+    
 </body>
 </html>
     

@@ -12,39 +12,43 @@
     <div id="purchaseInfo"></div>
     <button id="payButton">결제하기</button>
 
+    <script src="purchase.js"></script> 
+
     <script>
-        
-        function displayPurchaseInfo() {
+        document.getElementById('payButton').addEventListener('click', function() {
             const product = JSON.parse(localStorage.getItem('selectedProduct'));
 
             if (!product) {
-                alert('선택한 상품이 없습니다.');
-                window.location.href = 'buy.html'; 
+                alert('상품 정보가 없습니다.');
                 return;
             }
 
-            const purchaseInfo = document.getElementById('purchaseInfo');
-            purchaseInfo.innerHTML = `
-                <h2>${product.name}</h2>
-                <p>가격: ${product.price}원</p>
-                <p>설명: ${product.description}</p>
-                <p>판매자: ${product.seller}</p>
-                <img src="${product.image}" alt="${product.name}" width="200"><br>
-            `;
-        }
+            // 사용자 정보 (예시, 실제 구현에서는 사용자 입력을 받거나 세션에서 가져올 수 있음)
+            const userInfo = {
+                name: '사용자 이름', // 실제 사용자 이름으로 변경
+                phone: '010-1234-5678' // 실제 전화번호로 변경
+            };
 
-       
-        document.getElementById('payButton').addEventListener('click', function() {
+            // 구매 정보 저장
+            const purchaseData = {
+                productName: product.name,
+                price: product.price,
+                purchaseTime: new Date().toLocaleString(),
+                user: userInfo
+            };
+
+            const purchases = JSON.parse(localStorage.getItem('purchases')) || [];
+            purchases.push(purchaseData);
+            localStorage.setItem('purchases', JSON.stringify(purchases));
+
             alert('결제가 완료되었습니다!');
+
+            // 선택한 상품 정보 제거
             localStorage.removeItem('selectedProduct'); 
             window.location.href = 'buy.html'; 
         });
-
-        
-        window.onload = function() {
-            displayPurchaseInfo();
-        };
     </script>
+
     <header>
         <nav>
             <ul>
@@ -56,7 +60,10 @@
             </ul>
         </nav>
     </header>
+    
     <script src="navbar.js"></script>
+    <script src="slider.js"></script>
+    <script src="localsorage.js"></script>
 
      </div>
     <div id="slider-container">
