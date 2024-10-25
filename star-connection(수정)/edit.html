@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 수정</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="//typesquare.com/accessor/ko/script/typesquare.js?66fd514f1eb84bffa0f20d0cac1e02e5" charset="utf-8"></script>
+</head>
+<body>
+    <h1>게시글 수정</h1>
+    <form id="editPostForm">
+        <label for="productName" class="text">농산물 이름:</label>
+        <input type="text" id="productName" name="productName" class="write" required><br>
+
+        <label for="productPrice" class="text">가격:</label>
+        <input type="number" id="productPrice" name="productPrice" class="write" required><br>
+
+        <label for="productDescription" class="text">설명:</label><br>
+        <textarea id="productDescription" name="productDescription" class="write" required></textarea><br>
+
+        <button type="submit">수정 완료</button>
+    </form>
+    
+
+    <script>
+        
+        const postIndex = localStorage.getItem('editPostIndex');
+        const postData = JSON.parse(localStorage.getItem('editPostData'));
+
+        if (!postData) {
+            alert('수정할 게시글 정보가 없습니다.');
+            window.location.href = 'manage.html'; 
+        }
+
+        
+        document.getElementById('productName').value = postData.name;
+        document.getElementById('productPrice').value = postData.price;
+        document.getElementById('productDescription').value = postData.description;
+
+        
+        document.getElementById('editPostForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const updatedName = document.getElementById('productName').value;
+            const updatedPrice = document.getElementById('productPrice').value;
+            const updatedDescription = document.getElementById('productDescription').value;
+
+            
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+            posts[postIndex].name = updatedName;
+            posts[postIndex].price = updatedPrice;
+            posts[postIndex].description = updatedDescription;
+
+            localStorage.setItem('posts', JSON.stringify(posts)); 
+            alert('게시글이 수정되었습니다.');
+
+            
+            localStorage.removeItem('editPostIndex'); 
+            localStorage.removeItem('editPostData');
+            window.location.href = 'manage.html';
+        });
+    </script>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="welcome.html">🏠홈</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="buy.html">📃상품 목록</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="sellormanage.html">🛍️판매/관리</a></li>
+                <li>&nbsp&nbsp&nbsp<a href="pickup.html">🎁픽업 서비스</a></li>
+                <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button4 id="backButton">↩️뒤로가기</button4></li>
+            </ul>
+        </nav>
+    </header>
+
+     </div>
+    <div id="slider-container">
+        <div id="size-indicator">글자 크기 <span>16</span>pt</div>
+        <input type="range" id="rangeslider" min="10" max="25" value="16">
+    </div>
+    
+    <script src="navbar.js"></script>
+    <script src="localstorage.js"></script>
+    
+</body>
+</html>

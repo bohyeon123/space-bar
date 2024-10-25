@@ -1,0 +1,327 @@
+h1 {
+    font-family: '모리사와UD신고 M';
+    text-align: center;
+}
+
+h2 {
+    font-family: '모리사와UD신고 M';
+    text-align: center;
+  
+
+}
+h3 {
+    font-family: '모리사와UD신고 M';
+    text-align: center;
+}
+
+p {
+    font-family: '모리사와UD신고 M';
+    text-align: center;
+}
+
+p1 {
+    font-family: '모리사와UD신고 M';
+    text-align: center;
+}
+
+p2 {
+    font-family: '모리사와UD신고 M';
+    padding-left: 40px;
+}
+
+h3 { font-family: '모리사와UD신고 M';}
+
+h4 {
+    font-family: '모리사와UD신고 M';
+    text-align: center;
+}
+
+form { 
+    font-family: '모리사와UD신고 M';
+    text-align: center;
+}
+
+
+
+section {
+    font-family:'모리사와UD신고 M';
+    text-align: center;
+}
+
+.user-selection{
+	text-align: center;
+
+}
+
+
+
+button{
+    background-color:#3a3afd;
+    color:#ffffff;
+    font-family:'모리사와UD신고 M';
+    font-size: 16pt;
+    padding: 10px 80px;
+    border:none;
+    border-radius: 10px;
+    cursor:pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+button:hover{
+    background-color:#22228c;
+
+}
+button3{
+    background-color:#3a3afd;
+    color:#ffffff;
+    font-family:'모리사와UD신고 M';
+    padding: 10px 60px;
+    border:none;
+    border-radius: 10px;
+    cursor:pointer;
+    transition: background-color 0.3s;
+    margin-left: 900px;
+    position: fixed;
+}
+button3:hover{
+    background-color:#22228c;
+    
+
+}
+
+
+
+
+.button1 {
+    font-family: '모리사와UD신고 M';
+    background-color:#ffaa00;
+    color: #ffffff;
+    text-decoration-line : none;
+    display :inline-block;
+    border:none;
+    border-radius:10px;
+    padding:15px;
+    min-height:80px; 
+    min-width: 210px;
+    text-align: center; 
+    line-height: 50px; 
+    height: 50px; 
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.button2 {
+    font-family: '모리사와UD신고 M';
+    background-color:#3a3afd;
+    color: #ffffff;
+    text-decoration-line : none;
+    display :inline-block;
+    border:none;
+    border-radius:10px;
+    padding:15px;
+    min-height:80px; 
+    min-width: 210px;
+    text-align: center; 
+    line-height: 50px; 
+    height: 50px; 
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.button1:hover {
+    background-color:#cb8801;
+    color: #e3e3e3;
+    transition: 0.7s;
+}
+
+.button2:hover {
+    background-color:#22228c;
+    color: #e3e3e3;
+    transition: 0.7s;
+}
+
+.text {
+    font-family: '모리사와UD신고 M';
+    background-color:#ffffff;
+    color: #000000;
+    text-decoration-line : none;
+    display :inline-block;
+    border:none;
+    border-radius:10px;
+    padding:15px;
+    min-height:20px; 
+    min-width: 0px;
+    
+}
+.write {
+    font-family: '모리사와UD신고 M';
+    background-color:#ffffff;
+    color: #000000;
+    text-decoration-line : #000000;
+    display :inline-block;
+    border: #000000;
+    border-radius:10px;
+    padding:5px;
+    min-height:20px; 
+    min-width: 10px;
+    box-shadow: 0px 0px 3px 0px gray;
+}
+
+
+header {
+    position: fixed;
+    width: 100%;
+    top:0px;
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.1);
+    font-family:'모리사와UD신고 M';
+
+}
+
+header ul {
+    list-style-type: none;
+    margin: 10px;
+}
+
+header ul li {
+    display: inline;
+    margin-right: 30px;
+}
+
+header a {
+    text-decoration: none;
+    color: #000;
+    
+}
+
+header a:hover {
+    text-decoration:underline;
+}
+
+#backButton {
+    background-color: #ffffff; /* 녹색 */
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+#backButton:hover {
+    background-color: #b8b8b8; 
+}
+body {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-top: 80px;
+    padding-bottom: 100px;
+    
+    
+}
+
+#slider-container {
+    position: fixed; 
+    bottom: 20px;
+    left: 20px; 
+    background-color: rgba(188, 228, 228, 0);
+    padding: 1px;
+    box-shadow: 0 2px 5px rgba(188, 228, 228, 0);
+    text-align: center;
+    z-index: 1000; 
+}
+
+#size-indicator {
+    font-family: '모리사와UD신고 M';
+    font-size: 14px;
+    display: inline-block;
+    margin-right: 2px;
+    line-height: 3px;
+}
+
+#rangeslider {
+    width: 100px;
+    height: 8px; 
+    margin: 0;
+    padding: 0;
+    position: relative;
+    vertical-align: middle;
+    appearance: none;
+}
+
+
+#rangeslider::-webkit-slider-runnable-track {
+    height: 5px;
+    background: #ddd;
+    border-radius: 3px;
+}
+
+
+#rangeslider::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+    appearance: none;
+    position: relative;
+    top: -6px; 
+}
+
+#rangeslider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    top: -6px;
+}
+input{
+
+    height:30px;
+    border-radius: 10px;
+    border: none;
+    background-color:#ddd;
+    font-size: 16px;
+    font-family: 'GmarketSansMedium';
+}
+
+.center-text {
+    text-align: center;}
+
+#signupName{
+    width:245px;
+}
+#signupPhone{
+    width:205px;
+}
+#signupUsername{
+    width:225px;
+}
+#signupPassword{
+    width:205px;
+}
+#loginUsername{
+    width:225px;
+}
+#loginPassword{
+    width:205px;
+}
+#welcomeMassage{
+    text-align: center;
+}
+.custom-fieldset {
+    width: 50%; 
+    margin: 0 auto; 
+    text-align: center;
+}
+.checkbox {
+    padding-left: 20px;
+}
